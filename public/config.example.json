@@ -1,0 +1,116 @@
+{
+  // ===========================================================================
+  // MALL — kopiera till config.json och fyll i dina egna värden.
+  // config.json är gitignore:ad; denna fil med påhittade siffror är committbar.
+  // ALLA belopp anges i dagens köpkraft (reala kronor); appen indexerar utgift,
+  // pensioner och löner med inflationen från idag — samma ankare i person- och
+  // hushållsvyn. Kommentarer (//) måste stå på egen rad.
+  // ===========================================================================
+
+  // Visningsnamn för denna person (driver flik-etiketten högst upp).
+  "name": "Du",
+
+  // Konton (upp till 10). Endast ifyllda konton visas i GUI:t. Summan av
+  // value-fälten blir automatiskt iskValue. Utelämna iskAccounts för att i
+  // stället bara använda iskValue-fältet nedan. Valfritt "type": "ISK" (standard)
+  // eller "AF" (aktie-/fondkonto) — visas som tagg.
+  "iskAccounts": [
+    { "name": "Nordnet — ISK 1", "value": 3000000 },
+    { "name": "Lysa — Lysakonto", "value": 2000000 },
+    { "name": "Swedbank — AF", "value": 100000, "type": "AF" }
+  ],
+  // Totalt ISK-värde i kr. Ignoreras/överskrivs om iskAccounts är ifyllt.
+  "iskValue": 5100000,
+  // Pensionskapital (privat pensionsförsäkring/IPS) i kr.
+  "ppValue": 150000,
+
+  // Månadssparande i kr innan FIRE, samt start-/slutålder för sparandet.
+  "monthlySavings": 10000,
+  "monthlySavingsFrom": 50,
+  "monthlySavingsTo": 55,
+
+  // Födelseår och födelsemånad (1–12). currentAge härleds automatiskt.
+  "birthYear": 1975,
+  "birthMonth": 1,
+
+  // FIRE-ålder i hela år (+ extra månader endast för visning) och livslängd.
+  "fireAge": 55,
+  "fireAgeMonths": 0,
+  "lifeExpectancy": 90,
+
+  // Nominell avkastning (före inflation/ISK-skatt) och antagen inflation.
+  "returnRate": 0.06,
+  "inflation": 0.02,
+
+  // Önskad månadsutgift i kr, dagens köpkraft (inflationsjusteras från idag).
+  // Önskat arv (0 = töm).
+  "desiredSpend": 35000,
+  "targetEstate": 0,
+
+  // Pension brutto kr/mån: tjänste 55–64, tjänste 65+, allmän 65+, privat 55–64.
+  "tjänstepension55_64": 18000,
+  "tjänstepension65plus": 10000,
+  "allmänPension65plus": 18000,
+  "nordnetPrivat55_64": 1000,
+
+  // Kommunalskattesats (kommun + region + begravningsavgift).
+  "kommunRate": 0.32,
+
+  // Stiftelse — engångskapital som betalas ut som annuitet mellan start/stop.
+  // Visas bara om stiftelseValue > 0. stiftelseName styr etiketten.
+  "stiftelseName": "Stiftelse",
+  "stiftelseValue": 0,
+  "stiftelseRate": 0.04,
+  "stiftelseStartAge": 55,
+  "stiftelseEndAge": 60,
+
+  // Extrajobb — extra arbetsinkomst (brutto kr/mån). Visas bara om värdet > 0.
+  // Inflationsuppräknas och lönebeskattas. extraWorkName styr etiketten.
+  "extraWorkName": "Extrajobb",
+  "extraWorkMonthly": 0,
+  "extraWorkStartAge": 55,
+  "extraWorkEndAge": 65,
+
+  // --- Hushållsvy ---
+  // Gemensam månadsutgift, person 1:s & person 2:s bruttolön, samt andel av
+  // den avlidnes portfölj som efterlevande behåller (resten = arv).
+  "hhDesiredSpend": 60000,
+  "hhPartner1GrossSalary": 60000,
+  "hhPartner2GrossSalary": 40000,
+  "hhSurvivorFraction": 0.5,
+
+  // --- Partner (person 2) — samma fältbetydelser som ovan ---
+  "partner": {
+    "name": "Partner",
+    "iskAccounts": [
+      { "name": "ISK", "value": 1000000 }
+    ],
+    "birthYear": 1983,
+    "birthMonth": 1,
+    "fireAge": 55,
+    "fireAgeMonths": 0,
+    "lifeExpectancy": 90,
+    "returnRate": 0.06,
+    "inflation": 0.02,
+    "desiredSpend": 30000,
+    "targetEstate": 0,
+    "iskValue": 1000000,
+    "ppValue": 0,
+    "monthlySavings": 0,
+    "monthlySavingsFrom": 42,
+    "monthlySavingsTo": 55,
+    "tjänstepension55_64": 7000,
+    "tjänstepension65plus": 0,
+    "allmänPension65plus": 13000,
+    "nordnetPrivat55_64": 0,
+    "kommunRate": 0.32,
+    "stiftelseValue": 0,
+    "stiftelseRate": 0.04,
+    "stiftelseStartAge": 60,
+    "stiftelseEndAge": 65,
+    "extraWorkName": "Extrajobb",
+    "extraWorkMonthly": 0,
+    "extraWorkStartAge": 55,
+    "extraWorkEndAge": 65
+  }
+}

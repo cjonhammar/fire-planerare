@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+*.log
+
+# Pensionsbesked m.m. — får aldrig hamna i Docker-imagen
+docs
+*.pdf
+
+# Personlig config — Vite kopierar annars public/ in i dist och bakar in den i
+# imagen. Vid körning mountas den som read-only volym i stället (compose).
+public/config.json

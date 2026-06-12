@@ -1,0 +1,24 @@
+# Dependencies / build
+node_modules/
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Personliga uppgifter — får ALDRIG checkas in
+public/config.json
+docs/
+*.pdf
+
+# Env / secrets
+.env
+.env.*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Claude Code — lokala inställningar (per maskin, ska inte delas)
+.claude/settings.local.json

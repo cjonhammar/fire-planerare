@@ -1,0 +1,8 @@
+services:
+  fire-app:
+    build: .
+    ports:
+      - "3800:80"
+    restart: unless-stopped
+    volumes:
+      - ./public/config.json:/usr/share/nginx/html/config.json:ro
